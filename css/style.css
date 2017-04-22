@@ -22,7 +22,8 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: 0;
   left: 0;
-  background: #aa0000; }
+  background: #aa0000;
+  z-index: 999999; }
   .navigation::after {
     content: "";
     position: absolute;
@@ -66,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
     height: auto; }
 
 .menu-btn:focus ~ .navigation-list {
-  height: 100px;
+  height: 100%;
   outline: 0; }
 
 .logo {
@@ -121,6 +122,45 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block; }
   .offer li {
     display: inline-block;
-    width: 100%; }
+    width: 100%;
+    text-align: center; }
     .offer li h3 {
       text-align: center; }
+    .offer li img {
+      width: 50px;
+      height: 50px; }
+    .offer li p {
+      font-size: 1rem;
+      margin-bottom: 20px; }
+
+.bg-dark {
+  background: #333333; }
+
+.color-white {
+  color: #ffffff !important; }
+
+.parallax {
+  width: 100%;
+  height: 60vh;
+  background: url("../img/slider.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.button {
+  display: inline-block;
+  padding: 10px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: 0.5s; }
+  .button.medium {
+    padding: 15px; }
+  .button.red {
+    background: #aa0000; }
+    .button.red:hover {
+      background: #ffffff;
+      color: #333333; }
