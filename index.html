@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -64,6 +64,7 @@
             <section class="row row--cloudy non-rec__top">
                 <article class="content">
                     <h1 class="header header--center">GALERIA</h1>
+                    <div class="gallery-box"></div>
                 </article>
             </section>
             <section class="row row--red">
@@ -71,6 +72,16 @@
                     <h1 class="header header--center">KONTAKT</h1>
                 </article>
             </section>
+            <section class="row row--cloudy">
+                <div class="map" id="myMap"></div>
+            </section>
+            <footer class="footer footer--dark">
+                <article class="content">
+                    <p>projekt i wykonanie: <a href="http://kamilpowroznik.pl" target="_blank">kamilpowroznik.pl</a></p>
+                </article>
+            </footer>
         </main>
+        <script src="js/script.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
     </body>
 </html>

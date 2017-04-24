@@ -1,7 +1,7 @@
 * {
-  box-sizign: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  box-sizing: border-box; }
 
 html, body {
   width: 100%;
@@ -22,6 +22,10 @@ p {
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 15px; }
 
+a {
+  text-decoration: none;
+  color: inherit; }
+
 .navigation {
   width: 100%;
   height: auto;
@@ -30,6 +34,9 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   background: #aa0000;
   z-index: 999999; }
+  @media only screen and (min-width: 1160px) {
+    .navigation {
+      padding: 0 5%; } }
   .navigation .nav-trigger {
     width: 40px;
     height: 40px;
@@ -38,16 +45,22 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     border: none;
     background-color: transparent; }
+    @media only screen and (min-width: 768px) {
+      .navigation .nav-trigger {
+        display: none; } }
     .navigation .nav-trigger:focus {
       outline: 0; }
     .navigation .nav-trigger:focus ~ .nav-list {
-      height: 100%; }
+      height: calc(100vh - 200px); }
   .navigation .logo {
     padding: 10px;
     float: right; }
     .navigation .logo img {
       height: 60px;
       max-width: auto; }
+    @media only screen and (min-width: 768px) {
+      .navigation .logo {
+        float: left; } }
   .navigation .nav-list {
     width: 100%;
     height: 0;
@@ -66,7 +79,23 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.5rem;
         text-align: center;
         left: 50%;
-        transform: translateX(-50%); }
+        transform: translateX(-50%);
+        transition: 0.5s; }
+        .navigation .nav-list li a:hover {
+          background: #ffffff;
+          color: #2c3e50; }
+    @media only screen and (min-width: 768px) {
+      .navigation .nav-list {
+        width: auto;
+        height: auto;
+        margin-top: 15px;
+        float: right; }
+        .navigation .nav-list li {
+          width: auto;
+          float: left; } }
+    @media only screen and (min-width: 1160px) {
+      .navigation .nav-list li a {
+        font-size: 1.25rem; } }
 
 .slider {
   width: 100%;
@@ -101,6 +130,19 @@ h1, h2, h3, h4, h5, h6 {
   .offer-list img {
     width: 50px;
     height: 50px; }
+  @media only screen and (min-width: 768px) {
+    .offer-list li {
+      width: 46%;
+      margin: 2%;
+      float: left; } }
+  @media only screen and (min-width: 1160px) {
+    .offer-list li {
+      width: 21%;
+      margin: 2%;
+      cursor: pointer;
+      transition: 0.7s; }
+      .offer-list li:hover {
+        transform: scale(1.3); } }
 
 .parallax {
   display: block;
@@ -113,6 +155,28 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: center;
   align-items: center; }
+
+.gallery-box {
+  width: 100%;
+  height: 40vh;
+  border: 1px solid #333333;
+  border-radius: 5px; }
+
+.map {
+  min-height: 50vh;
+  width: 100%; }
+
+.footer {
+  width: 100%;
+  padding: 5%; }
+  .footer p {
+    margin: 0; }
+  .footer--dark {
+    background: #333333;
+    color: #ffffff; }
+  @media only screen and (min-width: 1160px) {
+    .footer {
+      padding: 1%; } }
 
 .header {
   display: inline-block;
@@ -129,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 0;
   bottom: -25px;
   left: 0;
-  border-left: 100vw solid transparent;
+  border-right: calc(100vw - 20px) solid transparent;
   border-top: 25px solid #aa0000; }
 
 .non-rec__top::before {
@@ -139,7 +203,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 0;
   top: -25px;
   left: 0;
-  border-left: 100vw solid transparent;
+  border-right: calc(100vw - 20px) solid transparent;
   border-bottom: 25px solid #ecf0f1; }
 
 .btn {

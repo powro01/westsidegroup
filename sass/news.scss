@@ -1,7 +1,7 @@
 * {
-    box-sizign: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 //colors
@@ -10,6 +10,11 @@ $white: #ffffff;
 $cloudy: rgba(236, 240, 241,1.0);
 $dark: rgba(44, 62, 80,1.0);
 $darkgray: #333333;
+
+//breakes 
+$tabpor: 768px;
+$tabland: 1024px;
+$lg: 1160px;
 
 html, body {
     width: 100%;
@@ -38,6 +43,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 15px;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 //navigation
 .navigation {
     width: 100%;
@@ -48,6 +58,10 @@ h1, h2, h3, h4, h5, h6 {
     background: $main-red;
     z-index: 999999;
 
+    @media only screen and (min-width: $lg) {
+        padding: 0 5%;
+    }
+
     .nav-trigger {
         width: 40px;
         height: 40px;
@@ -57,12 +71,16 @@ h1, h2, h3, h4, h5, h6 {
         border: none;
         background-color: transparent;
 
+        @media only screen and (min-width: $tabpor) {
+            display: none;
+        }
+
         &:focus {
             outline: 0;
         }
 
         &:focus ~ .nav-list {
-            height: 100%;
+            height: calc(100vh - 200px);
         }
     }
 
@@ -73,6 +91,10 @@ h1, h2, h3, h4, h5, h6 {
         img {
             height: 60px;
             max-width: auto;
+        }
+
+        @media only screen and (min-width: $tabpor) {
+            float: left;
         }
     }
 
@@ -97,6 +119,32 @@ h1, h2, h3, h4, h5, h6 {
                 text-align: center;
                 left: 50%;
                 transform: translateX(-50%);
+                transition: 0.5s;
+
+                &:hover {
+                    background: $white;
+                    color: $dark;
+                }
+            }
+        }
+
+        @media only screen and (min-width: $tabpor) {
+            width: auto;
+            height: auto;
+            margin-top: 15px;
+            float: right;
+
+            li {
+                width: auto;
+                float: left;
+            }
+        }
+
+        @media only screen and (min-width: $lg) {
+            li {
+                a {
+                    font-size: 1.25rem;
+                }
             }
         }
     }
@@ -154,6 +202,27 @@ h1, h2, h3, h4, h5, h6 {
         width: 50px;
         height: 50px;
     }
+
+    @media only screen and (min-width: $tabpor) {
+        li {
+            width: 46%;
+            margin: 2%;
+            float: left;
+        }
+    }
+
+    @media only screen and (min-width: $lg) {
+        li {
+            width: 21%;
+            margin: 2%;
+            cursor: pointer;
+            transition: 0.7s;
+
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+    }
 }
 
 //parallax
@@ -171,7 +240,38 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
-//
+//gallery 
+.gallery-box {
+    width: 100%;
+    height: 40vh;
+    border: 1px solid $darkgray;
+    border-radius: 5px;
+}
+
+//map
+
+.map {
+    min-height: 50vh;
+    width: 100%;
+}
+
+.footer {
+    width: 100%;
+    padding: 5%;
+
+    p {
+        margin: 0;
+    }
+
+    &--dark {
+        background: $darkgray;
+        color: $white;
+    }
+
+    @media only screen and (min-width: $lg) {
+        padding: 1%;
+    }
+}
 
 //headers 
 
@@ -197,7 +297,7 @@ h1, h2, h3, h4, h5, h6 {
             height: 0;
             bottom: -25px;
             left: 0;
-            border-left: 100vw solid transparent;
+            border-right: calc(100vw - 20px) solid transparent;
             border-top: 25px solid $main-red;
         }
     }
@@ -210,7 +310,7 @@ h1, h2, h3, h4, h5, h6 {
             height: 0;
             top: -25px;
             left: 0;
-            border-left: 100vw solid transparent;
+            border-right: calc(100vw - 20px) solid transparent;
             border-bottom: 25px solid $cloudy;
         }
     }
