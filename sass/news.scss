@@ -3,3 +3,239 @@
     margin: 0;
     padding: 0;
 }
+
+//colors
+$main-red: #aa0000;
+$white: #ffffff;
+$cloudy: rgba(236, 240, 241,1.0);
+$dark: rgba(44, 62, 80,1.0);
+$darkgray: #333333;
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    color: $dark;
+}
+
+//helper class
+img.responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+//default 
+
+ul, li {
+    list-style-type: none;
+}
+
+p {
+    margin-bottom: 25px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 15px;
+}
+
+//navigation
+.navigation {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $main-red;
+    z-index: 999999;
+
+    .nav-trigger {
+        width: 40px;
+        height: 40px;
+        margin: 20px;
+        float: left;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+
+        &:focus {
+            outline: 0;
+        }
+
+        &:focus ~ .nav-list {
+            height: 100%;
+        }
+    }
+
+    .logo {
+        padding: 10px;
+        float: right;
+
+        img {
+            height: 60px;
+            max-width: auto;
+        }
+    }
+
+    .nav-list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        transition: 1s;
+
+        li {
+            width: 100%;
+            display: inline-block;
+            position: relative;
+
+            a {
+                position: relative;
+                display: inline-block;
+                padding: 10px;
+                color: $white;
+                text-decoration: none;
+                font-size: 1.5rem;
+                text-align: center;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+.slider {
+    width: 100%;
+    height: 80%;
+    margin-top: 80px;
+
+    &.slide-one {
+        background: url('../img/slider.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+}
+
+//content
+
+.row {
+    position: relative;
+
+    .content {
+        padding: 100px 5%;
+    }
+
+    &--cloudy {
+        background: $cloudy;
+    }
+
+    &--dark {
+        background: $darkgray;
+        color: $white;
+    }
+
+    &--red {
+        background: $main-red;
+        color: $white;
+    }
+}
+
+//offerlist 
+.offer-list {
+    width: 100%;
+    display: inline-block;
+
+    li {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+//parallax
+
+.parallax {
+    display: block;
+    width: 100%;
+    min-height: 60vh;
+    background: url('../img/slider.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//
+
+//headers 
+
+.header {
+    display: inline-block;
+    position: relative;
+    font-size: 2rem;
+    
+    &--center {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+//non-rec-headers
+
+.non-rec {
+    &__bottom {
+            &::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            bottom: -25px;
+            left: 0;
+            border-left: 100vw solid transparent;
+            border-top: 25px solid $main-red;
+        }
+    }
+
+    &__top {
+            &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: -25px;
+            left: 0;
+            border-left: 100vw solid transparent;
+            border-bottom: 25px solid $cloudy;
+        }
+    }
+}
+
+//buttons 
+.btn {
+    display: inline-block;
+    padding: 10px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: $white;
+    border: 1px solid rgba(255,255,255, 0.6);
+    transition: 0.5s;
+
+    &__medium {
+        padding: 15px;
+    }
+
+    &--red {
+        background: $main-red;
+
+        &:hover {
+            background: $white;
+            color: $darkgray;
+        }
+    }
+}

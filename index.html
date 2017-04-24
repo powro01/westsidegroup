@@ -8,14 +8,14 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext" rel="stylesheet"> 
     </head>
     <body>
-        <nav class="navigation">
-            <button class="menu-btn">
-                <img src="img/menu.svg" alt="MENU">
+        <nav class="navigation non-rec__bottom">
+            <button class="nav-trigger">
+                <img src="img/menu.svg" class="responsive" alt="MENU">
             </button>
             <div class="logo">
-                <img src="img/logo.png" alt="WestSide Group"> 
+                <img src="img/logo.png" class="responsive" alt="WestSide Group"> 
             </div>
-            <ul class="navigation-list">
+            <ul class="nav-list">
                 <li><a href="#">Strona główna</a></li>
                 <li><a href="#">Oferta</a></li>
                 <li><a href="#aboutus">O nas</a></li>
@@ -23,14 +23,12 @@
                 <li><a href="#">Kontakt</a></li>
             </ul>
         </nav>
-        <header class="top-section">
-            <!--<img src="img/slider.jpg" class="img-responsive">-->
-        </header>
+        <header class="slider slide-one"></header>
         <main>
-            <section class="content top-header">
-                <article class="text">
-                    <h1>OFERTA</h1>
-                    <ul class="offer">
+            <section class="row row--cloudy non-rec__top">
+                <article class="content">
+                    <h1 class="header header--center">OFERTA</h1>
+                    <ul class="offer-list">
                         <li>
                             <h3>BLACHARSTWO</h3>
                             <img src="img/spatula.svg">
@@ -54,23 +52,23 @@
                     </ul>
                 </article>
             </section>
-            <section class="content bg-dark">
-                <article class="text color-white" id="aboutus">
-                    <h1>O NAS</h1>
+            <section class="row row--dark">
+                <article class="content" id="aboutus">
+                    <h1 class="header header--center">O NAS</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus dolorum architecto maiores harum unde nulla quisquam amet, distinctio ex magnam hic doloremque consequuntur, officiis sit, error facere magni eius id. Ut non aliquam debitis odit voluptate optio pariatur libero, fugit, voluptatibus laborum voluptates. Explicabo, ad sint esse, cupiditate nostrum consequuntur molestias assumenda magnam alias eaque, aut reprehenderit aspernatur! Nihil eius perferendis alias deleniti veniam cum fugit! Delectus eaque omnis explicabo rerum illo, repudiandae iure tempore. Maiores, temporibus similique laboriosam dolorum commodi neque inventore nesciunt illum id soluta distinctio? Voluptas recusandae cumque, facilis error dolore doloremque earum dicta exercitationem magnam eveniet.</p>
                 </article>
                 <article class="parallax">
-                    <a href="#" class="button medium red">Skontaktuj się z nami!</a>
+                    <a href="#" class="btn btn--red btn__medium">Skontaktuj się z nami!</a>
                 </article>
             </section>
-            <section class="content gallery">
-                <article class="text">
-                    <h1>GALERIA</h1>
+            <section class="row row--cloudy non-rec__top">
+                <article class="content">
+                    <h1 class="header header--center">GALERIA</h1>
                 </article>
             </section>
-            <section class="content bg-red">
-                <article class="text color-white">
-                    <h1>KONTAKT</h1>
+            <section class="row row--red">
+                <article class="content">
+                    <h1 class="header header--center">KONTAKT</h1>
                 </article>
             </section>
         </main>
