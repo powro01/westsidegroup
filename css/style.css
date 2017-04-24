@@ -136,6 +136,10 @@ h1, h2, h3, h4, h5, h6 {
 .bg-dark {
   background: #333333; }
 
+.bg-red {
+  background: #aa0000;
+  color: white; }
+
 .color-white {
   color: #ffffff !important; }
 
